@@ -1,0 +1,32 @@
+site_name: Proyecto 2026/27
+nav:
+  - Practica 01 - Instalación y Configuración de nuestro sitio web: practica01.md
+theme:
+  name: readthedocs
+  locale: es
+  features:
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.arithmatex
+  - pymdownx.blocks.admonition
+  - pymdownx.magiclink
+  - pymdownx.keys
+  - pymdownx.highlight
+  - pymdownx.blocks.definition
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+  - js/copy-button.js
+
+extra_css:
+  - css/estilo.css
