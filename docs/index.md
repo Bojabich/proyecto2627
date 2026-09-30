@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de un estudiante de Desarrollo de Aplicaciones Web.">
+  <meta name="theme-color" content="#101521">
+  <title>Mi espacio web | DAW</title>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --fondo: #101521;
+      --panel: #171e2d;
+      --texto: #f3f5fb;
+      --suave: #a7b0c1;
+      --verde: #c7f36b;
+      --borde: rgba(255, 255, 255, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 82% 18%, rgba(90, 106, 179, .22), transparent 34%),
+        var(--fondo);
+      color: var(--texto);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .contenedor {
+      width: min(1100px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .marca {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--verde);
+      color: var(--fondo);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--suave);
+      text-decoration: none;
+      font-size: .93rem;
+    }
+
+    nav a:hover {
+      color: var(--verde);
+    }
+
+    .portada {
+      padding: 100px 0 86px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .etiqueta {
+      color: var(--verde);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.3rem);
+      line-height: 1.04;
+      letter-spacing: -.055em;
+      margin: 18px 0 22px;
+    }
+
+    h1 span {
+      color: var(--verde);
+    }
+
+    .introduccion {
+      color: var(--suave);
+      font-size: 1.12rem;
+      max-width: 590px;
+    }
+
+    .botones {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 19px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .2s;
+    }
+
+    .boton:hover {
+      transform: translateY(-2px);
+    }
+
+    .boton-principal {
+      background: var(--verde);
+      color: var(--fondo);
+    }
+
+    .boton-secundario {
+      border: 1px solid var(--borde);
+    }
+
+    .ilustracion {
+      position: relative;
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+    }
+
+    .circulo {
+      position: absolute;
+      width: 255px;
+      height: 255px;
+      border-radius: 50%;
+      background: linear-gradient(140deg, #d8ff91, #86b955 55%, #3b645c);
+      box-shadow: 0 0 90px rgba(172, 226, 103, .2);
+    }
+
+    .tarjeta-codigo {
+      position: relative;
+      z-index: 1;
+      width: min(330px, 100%);
+      padding: 22px 24px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 18px;
+      background: rgba(16, 21, 33, .92);
+      box-shadow: 0 25px 65px #080b12aa;
+      transform: rotate(-4deg);
+      font: .91rem/1.9 ui-monospace, Consolas, monospace;
+    }
+
+    .puntos {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .puntos span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff7676;
+    }
+
+    .puntos span:nth-child(2) {
+      background: #ffd36a;
+    }
+
+    .puntos span:nth-child(3) {
+      background: #83dd90;
+    }
+
+    .verde {
+      color: var(--verde);
+    }
+
+    .azul {
+      color: #8ec9ff;
+    }
+
+    .apagado {
+      color: #7d899c;
+    }
+
+    section {
+      padding: 26px 0 82px;
+    }
+
+    .cabecera-seccion {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .cabecera-seccion h2 {
+      font-size: 1.9rem;
+      letter-spacing: -.035em;
+      margin: 5px 0;
+    }
+
+    .cabecera-seccion p,
+    .tarjeta p {
+      color: var(--suave);
+    }
+
+    .rejilla {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tarjeta {
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .045), rgba(255, 255, 255, .015));
+      padding: 24px;
+      min-height: 220px;
+    }
+
+    .icono {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: rgba(199, 243, 107, .12);
+      color: var(--verde);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .tarjeta h3 {
+      margin: 18px 0 8px;
+      font-size: 1.12rem;
+    }
+
+    .tarjeta p {
+      margin: 0;
+      font-size: .94rem;
+    }
+
+    .tarjeta-proyecto {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tarjeta-proyecto a {
+      margin-top: auto;
+      padding-top: 20px;
+      color: var(--verde);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .sobre-mi {
+      padding: 0 0 88px;
+    }
+
+    .sobre-mi-contenido {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 35px;
+      padding: 30px;
+      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--borde);
+    }
+
+    .sobre-mi h2 {
+      font-size: 1.75rem;
+      line-height: 1.15;
+      margin: 8px 0;
+    }
+
+    .sobre-mi p {
+      color: var(--suave);
+      margin: 0;
+    }
+
+    .etiquetas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .etiqueta-pildora {
+      border: 1px solid var(--borde);
+      border-radius: 99px;
+      padding: 5px 11px;
+      color: #dce4f1;
+      font-size: .82rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--borde);
+      padding: 23px 0;
+      color: var(--suave);
+      font-size: .88rem;
+    }
+
+    .pie {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .portada {
+        grid-template-columns: 1fr;
+        padding: 70px 0 45px;
+        gap: 15px;
+      }
+
+      .ilustracion {
+        min-height: 270px;
+      }
+
+      .circulo {
+        width: 205px;
+        height: 205px;
+      }
+
+      .rejilla {
+        grid-template-columns: 1fr;
+      }
+
+      .tarjeta {
+        min-height: auto;
+      }
+
+      .sobre-mi-contenido {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .contenedor {
+        width: calc(100% - 28px);
+      }
+
+      header {
+        height: 70px;
+      }
+
+      nav a:first-child {
+        display: none;
+      }
+
+      h1 {
+        font-size: 2.65rem;
+      }
+
+      .pie {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="contenedor">
+    <a class="marca" href="./" aria-label="Inicio">
+      <span class="logo">&lt;/&gt;</span>
+      <span>Mi espacio web</span>
+    </a>
+
+    <nav aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="./practica01.html">Prácticas</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contenedor portada">
+      <div>
+        <div class="etiqueta">Estudiante de Desarrollo Web</div>
+        <h1>Hola, estoy aprendiendo a crear <span>para la web.</span></h1>
+        <p class="introduccion">
+          Este es mi espacio para compartir lo que voy aprendiendo en
+          Desarrollo de Aplicaciones Web: proyectos, prácticas y nuevas
+          ideas, paso a paso.
+        </p>
+
+        <div class="botones">
+          <a class="boton boton-principal" href="#proyectos">
+            Explorar mis trabajos <span aria-hidden="true">↗</span>
+          </a>
+          <a class="boton boton-secundario" href="#sobre-mi">Conóceme</a>
+        </div>
+      </div>
+
+      <div class="ilustracion" aria-hidden="true">
+        <div class="circulo"></div>
+        <div class="tarjeta-codigo">
+          <div class="puntos"><span></span><span></span><span></span></div>
+          <div><span class="apagado">const</span> objetivo = {</div>
+          <div>&nbsp;&nbsp;crear: <span class="verde">"cosas útiles"</span>,</div>
+          <div>&nbsp;&nbsp;aprender: <span class="azul">true</span>,</div>
+          <div>&nbsp;&nbsp;mejorar: <span class="azul">"cada día"</span></div>
+          <div>};</div>
+          <div class="apagado">// en construcción…</div>
+        </div>
+      </div>
+    </div>
+
+    <section class="contenedor" id="proyectos">
+      <div class="cabecera-seccion">
+        <div>
+          <div class="etiqueta">En mi recorrido</div>
+          <h2>Lo que estoy construyendo</h2>
+        </div>
+        <p>Aprendizaje convertido en proyectos.</p>
+      </div>
+
+      <div class="rejilla">
+        <article class="tarjeta tarjeta-proyecto">
+          <div class="icono" aria-hidden="true">⌘</div>
+          <h3>Prácticas de clase</h3>
+          <p>Ejercicios y actividades para poner en práctica nuevos conceptos.</p>
+          <a href="./practica01.html">Ver primera práctica →</a>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">✦</div>
+          <h3>Diseño web</h3>
+          <p>Explorando cómo combinar estructura, estilo y una experiencia sencilla de usar.</p>
+        </article>
+
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">{ }</div>
+          <h3>Programación</h3>
+          <p>Aprendiendo a resolver problemas y a convertir ideas en aplicaciones.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contenedor sobre-mi" id="sobre-mi">
+      <div class="sobre-mi-contenido">
+        <div>
+          <div class="etiqueta">Un poco sobre mí</div>
+          <h2>Curiosidad, código y ganas de aprender.</h2>
+        </div>
+
+        <div>
+          <p>
+            Soy alumno de <strong>Desarrollo de Aplicaciones Web</strong>.
+            Estoy empezando mi camino en el desarrollo y usaré esta web como
+            portfolio de mi aprendizaje. Iré añadiendo proyectos y
+            conocimientos a medida que avance el curso.
+          </p>
+
+          <div class="etiquetas">
+            <span class="etiqueta-pildora">Desarrollo web</span>
+            <span class="etiqueta-pildora">Nuevos proyectos</span>
+            <span class="etiqueta-pildora">Aprendizaje continuo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor pie">
+      <span>Hecho con curiosidad y muchas ganas de aprender.</span>
+      <span>Proyecto DAW · 2026/27</span>
+    </div>
+  </footer>
+</body>
+</html>

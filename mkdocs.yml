@@ -1,5 +1,6 @@
 site_name: Proyecto 2026/27
 nav:
+  - Inicio: index.md
   - Practica 01 - Instalación y Configuración de nuestro sitio web: practica01.md
 theme:
   name: readthedocs
