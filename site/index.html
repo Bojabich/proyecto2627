@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="es" >
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Guía de estándares, arquitectura web y servidor para DAW" /><meta name="author" content="Alumno DAW - IES Los Albares" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>Documentación Técnica DWES</title>
+    <title>Proyecto 2026/27</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="css/estilo.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -21,10 +22,6 @@
       <script src="js/html5shiv.min.js"></script>
     <![endif]-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/php.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/bash.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/html.min.js"></script>
       <script>hljs.highlightAll();</script> 
 </head>
 
@@ -34,43 +31,33 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> Documentación Técnica DWES
+          <a href="." class="icon icon-home"> Proyecto 2026/27
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
               <ul>
-                <li class="toctree-l1"><a class="" href="index.php.md">Inicio</a>
+                <li class="toctree-l1"><a class="" href="practica01.md">Practica 01 - Instalación y Configuración de nuestro sitio web</a>
                 </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Estándares y Nombrado</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="" href="estandares/nombrado.md">Reglas de Directorios</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Servidor Web</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="" href="servidor/respuestas-http.md">Protocolo HTTP</a>
-                  </li>
               </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">Documentación Técnica DWES</a>
+          <a href=".">Proyecto 2026/27</a>
         
       </nav>
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+    <li><a href="." class="icon icon-home" aria-label="Documentos"></a></li>
       <li class="breadcrumb-item active">Welcome to MkDocs</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -90,7 +77,7 @@
 <li><code>mkdocs -h</code> - Print help message and exit.</li>
 </ul>
 <h2 id="project-layout">Project layout</h2>
-<div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
+<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
 docs/
     index.md  # The documentation homepage.
     ...       # Other markdown pages, images and other files.
@@ -105,7 +92,7 @@ docs/
     <!-- Copyright etc -->
   </div>
 
-  Built with <a href="https://properdocs.org/">ProperDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
           
         </div>
@@ -115,7 +102,7 @@ docs/
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
+  <div class="rst-versions" role="note" aria-label="Versiones">
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
@@ -126,6 +113,8 @@ docs/
     <script>var base_url = ".";</script>
     <script src="js/theme_extra.js"></script>
     <script src="js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="js/copy-button.js"></script>
       <script src="search/main.js"></script>
     <script>
         jQuery(function () {
@@ -138,5 +127,5 @@ docs/
 
 <!--
 ProperDocs version : ProperDocs 1.6.7
-Build Date UTC : 2026-09-30 07:07:07.289428+00:00
+Build Date UTC : 2026-09-30 11:37:52.458774+00:00
 -->
