@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="es" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Practica 01 - Instalación y Configuración de nuestro sitio web - Proyecto 2026/27</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/estilo.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var properdocs_page_name = "Practica 01 - Instalaci\u00f3n y Configuraci\u00f3n de nuestro sitio web";
+        var properdocs_page_input_path = "practica01.md";
+        var properdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Proyecto 2026/27
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Buscar documentos" aria-label="Buscar documentos" title="Escriba el término de búsqueda aquí" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegación">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Inicio</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Practica 01 - Instalación y Configuración de nuestro sitio web</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#0-instalar-git">0. Instalar Git</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-configurar-git-en-local">1. Configurar Git en local</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-instalar-github-cli">2. Instalar GitHub CLI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-iniciar-sesion-y-comprobar-github-cli">3. Iniciar sesión y comprobar GitHub CLI</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-instalar-herd-y-seleccionar-php-84">4. Instalar Herd y seleccionar PHP 8.4</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-clonar-el-repositorio-misitio">5. Clonar el repositorio misitio</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-enlazar-misitio-a-herd-y-activar-https">6. Enlazar misitio a Herd y activar HTTPS</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resumen-tema-read-the-docs-y-plugins-de-properdocs">Resumen: tema Read the Docs y plugins de ProperDocs</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Menú de navegación en móvil">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Proyecto 2026/27</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Documentos"></a></li>
+      <li class="breadcrumb-item active">Practica 01 - Instalación y Configuración de nuestro sitio web</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="instalacion-y-configuracion-del-sitio-web-local">Instalación y configuración del sitio web local</h1>
+<h3 id="0-instalar-git">0. Instalar Git</h3>
+<p>Descargamos Git para Windows desde su página oficial e instalamos la versión de 64 bits. Durante la instalación se pueden mantener las opciones recomendadas.</p>
+<p>Comprobamos que Git está disponible:</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+<img alt="Version de Git" src="../img/git%20instalado.png" /></p>
+<h3 id="1-configurar-git-en-local">1. Configurar Git en local</h3>
+<p>Indicamos el nombre y el correo que queremos asociar a los nuevos commits. Sustituimos los valores de ejemplo por los nuestros:</p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="n">user</span><span class="p">.</span><span class="n">name</span> <span class="s2">"Tu nombre"</span>
+<span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="n">user</span><span class="p">.</span><span class="n">email</span> <span class="s2">"tu-correo@example.com"</span>
+</code></pre></div>
+<p>Comprobamos la configuración:</p>
+<div class="highlight"><pre><span></span><code><span class="n">git</span> <span class="n">config</span> <span class="p">-</span><span class="n">-global</span> <span class="p">-</span><span class="n">-list</span>
+</code></pre></div>
+<p>La salida debe incluir <code>user.name</code> y <code>user.email</code> con los valores configurados.</p>
+<p><img alt="Git configurado" src="../img/globallist.png" /></p>
+<hr />
+<h3 id="2-instalar-github-cli">2. Instalar GitHub CLI</h3>
+<p>Instalamos GitHub CLI (<code>gh</code>) desde su página oficial o, en Windows, con el gestor <code>winget</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">winget</span> <span class="n">install</span> <span class="p">-</span><span class="n">-id</span> <span class="n">GitHub</span><span class="p">.</span><span class="nb">cli</span>
+</code></pre></div>
+<p>Abrimos una nueva terminal y comprobamos la instalación:</p>
+<div class="highlight"><pre><span></span><code><span class="n">gh</span> <span class="p">-</span><span class="n">-version</span>
+</code></pre></div>
+<hr />
+<h3 id="3-iniciar-sesion-y-comprobar-github-cli">3. Iniciar sesión y comprobar GitHub CLI</h3>
+<p>Iniciamos el proceso de autenticación con la cuenta de GitHub:</p>
+<div class="highlight"><pre><span></span><code><span class="n">gh</span> <span class="n">auth</span> <span class="n">login</span>
+</code></pre></div>
+<p>Elegimos <code>GitHub.com</code>, el protocolo HTTPS y la opción de autenticación mediante navegador. Seguimos las indicaciones que aparecen en la terminal y confirmamos el acceso en el navegador.</p>
+<p>Verificamos el estado de la sesión:</p>
+<div class="highlight"><pre><span></span><code><span class="n">gh</span> <span class="n">auth</span> <span class="n">status</span>
+</code></pre></div>
+<p><img alt="GitHub CLI autenticado" src="../img/githubcliente.png" /></p>
+<hr />
+<h3 id="4-instalar-herd-y-seleccionar-php-84">4. Instalar Herd y seleccionar PHP 8.4</h3>
+<p>Descargamos e instalamos Herd para Windows desde la página oficial de Laravel Herd. Herd proporciona el entorno local para ejecutar PHP y servir el sitio.</p>
+<p>En Herd, abrimos <strong>Settings / Preferences → PHP</strong> e instalamos PHP 8.4 si todavía no está disponible. Después seleccionamos <strong>PHP 8.4</strong> como versión global. También se puede seleccionar desde una terminal:</p>
+<div class="highlight"><pre><span></span><code><span class="n">herd</span> <span class="n">use</span> <span class="n">8</span><span class="p">.</span><span class="n">4</span>
+</code></pre></div>
+<p>Comprobamos la versión activa:</p>
+<div class="highlight"><pre><span></span><code><span class="n">php</span> <span class="n">-v</span>
+</code></pre></div>
+<p><img alt="Herd y PHP 8.4" src="../img/php.png" /></p>
+<hr />
+<h3 id="5-clonar-el-repositorio-misitio">5. Clonar el repositorio <code>misitio</code></h3>
+<p>Creamos o elegimos una carpeta para los proyectos y clonamos el repositorio. Sustituimos <code>USUARIO</code> por el propietario real del repositorio:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Set-Location</span> <span class="n">-Path</span> <span class="s2">"$env:USERPROFILE\Herd"</span>
+<span class="n">gh</span> <span class="n">repo</span> <span class="n">clone</span> <span class="n">USUARIO</span><span class="p">/</span><span class="n">misitio</span>
+<span class="nb">cd </span><span class="n">misitio</span>
+</code></pre></div>
+<p>Comprobamos que estamos dentro de la copia local y que Git reconoce el repositorio:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Location</span>
+<span class="n">git</span> <span class="n">status</span>
+</code></pre></div>
+<p>La ruta actual debe terminar en <code>Herd\misitio</code> y <code>git status</code> debe mostrar la rama actual y el estado de trabajo.</p>
+<p><img alt="Repositorio misitio clonado" src="../img/herdlink.png" /></p>
+<hr />
+<h3 id="6-enlazar-misitio-a-herd-y-activar-https">6. Enlazar <code>misitio</code> a Herd y activar HTTPS</h3>
+<p>Abrimos Herd y usamos la opción para enlazar un proyecto existente (<strong>Add site / Link existing project</strong>, según la versión de Herd). Seleccionamos la carpeta local <code>misitio</code>. Al estar dentro de la carpeta <code>Herd</code>, Herd puede reconocerla como sitio local; si el asistente solicita el nombre del sitio, indicamos <code>misitio</code>.</p>
+<p>Para activar HTTPS, seleccionamos el sitio en Herd y usamos la opción <strong>Secure</strong>. También se puede ejecutar desde la carpeta del proyecto:</p>
+<div class="highlight"><pre><span></span><code><span class="n">herd</span> <span class="n">secure</span> <span class="n">misitio</span>
+</code></pre></div>
+<p>Herd asigna el dominio local <code>https://misitio.test</code> y prepara el certificado local. Abrimos esa dirección en el navegador y comprobamos que carga la página del sitio y que la conexión utiliza HTTPS.</p>
+<p><img alt="misitio en HTTPS" src="../img/misitioseguro.png" /></p>
+<hr />
+<h2 id="resumen-tema-read-the-docs-y-plugins-de-properdocs">Resumen: tema Read the Docs y plugins de ProperDocs</h2>
+<p>La documentación se ha preparado con <strong>ProperDocs</strong>, que transforma páginas Markdown en un sitio web estático a partir de la configuración <code>properdocs.yml</code>.</p>
+<ul>
+<li>
+<p><strong>Tema <code>readthedocs</code>:</strong> organiza el contenido como documentación técnica, con navegación lateral, jerarquía de páginas y controles de navegación entre páginas. En esta práctica se activa además el resaltado de sintaxis para los bloques de código (<code>highlightjs</code>) y se declaran PowerShell, Bash y YAML como lenguajes a resaltar.</p>
+</li>
+<li>
+<p><strong>Plugin <code>search</code>:</strong> plugin integrado de ProperDocs que crea un índice de búsqueda para encontrar contenido en las páginas. Con la configuración predeterminada, indexa títulos, encabezados y texto completo, lo que permite localizar rápidamente pasos y comandos.</p>
+</li>
+<li><strong>Página Markdown (<code>docs/index.md</code>):</strong> contiene los pasos, comandos, explicaciones y referencias a las capturas. ProperDocs la convierte en la página principal del sitio.</li>
+<li><strong>Archivo <code>properdocs.yml</code>:</strong> define el título, la navegación, el tema, el resaltado de código y el plugin de búsqueda.</li>
+</ul>
+<p>El tema Read the Docs y el plugin <code>search</code> son componentes diferentes: el tema controla la presentación y navegación; el plugin añade la búsqueda del contenido. Para instalar ProperDocs junto con el tema elegido y previsualizar la documentación en local:</p>
+<div class="highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">properdocs</span> <span class="n">properdocs-theme-readthedocs</span>
+<span class="n">properdocs</span> <span class="n">serve</span>
+</code></pre></div>
+<p>Al iniciar el servidor, ProperDocs muestra la dirección local de previsualización en la terminal.</p>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Navegación de pie de página">
+        <a href=".." class="btn btn-neutral float-left" title="Inicio"><span class="icon icon-circle-arrow-left"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Construído con <a href="https://properdocs.org/">ProperDocs</a> usando un <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a> provisto por <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versiones">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Anterior</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      <script src="../js/copy-button.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
